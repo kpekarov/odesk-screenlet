@@ -249,7 +249,7 @@ class oDeskScreenlet(screenlets.Screenlet):
                 self.__dict__['update_interval'] = value
                 if self.__timeout:
                     gobject.source_remove(self.__timeout)
-                self.__timeout = gobject.timeout_add(value * 1000, self.update)
+                self.__timeout = gobject.timeout_add(value * 60 * 1000, self.update)
             else:
                 pass
         elif name == "odesk_secret":
